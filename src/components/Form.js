@@ -6,11 +6,11 @@ import Experience from './Experience';
 export class Form extends Component {
   render() {
     return (
-      <form>
+      <div>
         <PersonalInfo />
         <Education />
         <Experience />
-      </form>
+      </div>
     );
   }
 }

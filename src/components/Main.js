@@ -22,15 +22,19 @@ export class Main extends Component {
 export default Main;
 
 const mainStyles = {
+  height: '100vh',
+  width: '100vw',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
-  margin: '0',
+  margin: '0px',
 };
 
 const mainStructureStyles = {
   display: 'flex',
   justifyContent: 'space-evenly',
   alignItems: 'center',
+  width: '100vw',
+  height: '80vh',
 };

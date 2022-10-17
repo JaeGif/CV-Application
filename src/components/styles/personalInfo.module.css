@@ -1,0 +1,12 @@
+.inputLabelsWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.formStructure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

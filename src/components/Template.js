@@ -9,8 +9,8 @@ export class Template extends Component {
 export default Template;
 
 const TemplateWrapperStyles = {
-  height: '100%',
-  width: '40%',
+  height: '80vh',
+  width: '57vh',
   border: 'solid grey 2px',
   backgroundColor: 'black',
 };

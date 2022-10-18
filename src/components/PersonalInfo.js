@@ -64,7 +64,10 @@ export class PersonalInfo extends Component {
               placeholder='Summary of your skills'
             ></textarea>
           </div>
-          <button className={styles.nextButtons} type='submit'>
+          <button
+            className={`${styles.nextButtons} ${styles.invalid}`}
+            type='submit'
+          >
             Next
           </button>
         </div>

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import background from '../assets/cv.png';
 
 export class Template extends Component {
   render() {
-    return <div style={TemplateWrapperStyles}>Template</div>;
+    return <div style={TemplateWrapperStyles}></div>;
   }
 }
 
@@ -12,5 +13,7 @@ const TemplateWrapperStyles = {
   height: '80vh',
   width: '57vh',
   border: 'solid grey 2px',
-  backgroundColor: 'black',
+  backgroundImage: `url(${background})`,
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: 'cover',
 };

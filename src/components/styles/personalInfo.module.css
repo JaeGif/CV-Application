@@ -29,4 +29,11 @@
   width: 18vw;
   border-radius: 0;
   border: none;
+  font-size: 1.5rem;
+}
+.invalid {
+  border: solid 3px rgb(255, 113, 137);
+}
+.valid {
+  border: solid 3px rgb(113, 255, 97);
 }

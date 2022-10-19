@@ -1,0 +1,12 @@
+.headingText {
+  font-size: 4vh;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.regularText {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1.75vh;
+}
+.wrappingBodyText {
+  max-height: 8.5vh;
+  overflow: hidden;
+}

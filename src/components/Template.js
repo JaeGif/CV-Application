@@ -1,30 +1,40 @@
 import React, { Component } from 'react';
 import background from '../assets/cv.png';
 import styles from './styles/template.module.css';
+import profileImg from '../assets/zoinks.jpg';
 
 export class Template extends Component {
   render() {
     return (
       <div style={TemplateWrapperStyles}>
-        <div style={summaryDisplayStyles}>
-          <div style={nameWrapperStyles}>
-            <h1 className={styles.headingText}>Jae</h1>
-            <h1 className={styles.headingText}>Gifford</h1>
+        <div>
+          <div style={fitImage}>
+            <img
+              style={profileImage}
+              src={profileImg}
+              alt='This is your face'
+            />
+            <div style={summaryDisplayStyles}>
+              <div style={nameWrapperStyles}>
+                <h1 className={styles.headingText}>Jae</h1>
+                <h1 className={styles.headingText}>Gifford</h1>
+              </div>
+              <p className={`${styles.regularText} ${styles.wrappingBodyText}`}>
+                This is a summary of Jae, the best dude for the job. You know
+                it, everyone knows it. I hope that the world will know it soon.
+                Ya boi makes good websites. He also wanted to add enough text
+                that the element would overflow so that he knows the exact
+                limitations
+              </p>
+            </div>
           </div>
-          <p className={`${styles.regularText} ${styles.wrappingBodyText}`}>
-            This is a summary of Jae, the best dude for the job. You know it,
-            everyone knows it. I hope that the world will know it soon. Ya boi
-            makes good websites. He also wanted to add enough text that the
-            element would overflow so that he knows the exact limitations
-          </p>
         </div>
-
         <div style={lowerHalfWrapperStyles} className={`${styles.regularText}`}>
           <div>
             <div
               className={`${styles.wrappingLeftSections} ${styles.spacingContacts} ${styles.smallerText}`}
             >
-              <p>13122128930</p>
+              <p>131-2212-8930</p>
               <p>jaegiff@gmail.com</p>
               <p>7242 Jackson Hill Rd. Newark NY 14513</p>
             </div>
@@ -173,7 +183,6 @@ const summaryDisplayStyles = {
   alignItems: 'flex-start',
   marginTop: '12.5px',
   gap: '5px',
-  marginLeft: '180px',
 };
 const lowerHalfWrapperStyles = {
   display: 'flex',
@@ -181,4 +190,15 @@ const lowerHalfWrapperStyles = {
   width: '100%',
   height: '463px',
   gap: '30px',
+};
+const profileImage = {
+  height: '125px',
+  border: 'solid 1px black',
+  borderRadius: '50%',
+  marginTop: '10px',
+  marginLeft: '40px',
+};
+const fitImage = {
+  display: 'flex',
+  justifyContent: 'center',
 };

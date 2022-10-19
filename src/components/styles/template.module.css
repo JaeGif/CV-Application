@@ -4,9 +4,19 @@
 }
 .regularText {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 1.75vh;
+  font-size: 1.5vh;
 }
 .wrappingBodyText {
   max-height: 8.5vh;
   overflow: hidden;
+  padding-right: 1vw;
+}
+.wrappingLeftSections {
+  max-width: 7.5vw;
+  min-width: 7.5vw;
+
+  max-height: 12.25vh;
+  min-height: 12.25vh;
+  overflow: hidden;
+  background-color: blue;
 }

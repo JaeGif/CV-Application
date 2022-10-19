@@ -1,19 +1,15 @@
 import React, { Component } from 'react';
-import Header from './Header';
 import Form from './Form';
 import Template from './Template';
-import Footer from './Footer';
 
 export class Main extends Component {
   render() {
     return (
       <div style={mainStyles}>
-        <Header />
         <div style={mainStructureStyles}>
           <Form />
           <Template />
         </div>
-        <Footer />
       </div>
     );
   }

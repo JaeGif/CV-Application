@@ -19,17 +19,16 @@ export class Template extends Component {
           </p>
         </div>
 
-        <div style={lowerHalfWrapperStyles} className={`${styles.regularText}`}>
+        <div style={lowerHalfWrapperStyles} className={`${styles.smallerText}`}>
           <div>
-            <div className={styles.wrappingLeftSections}>
-              <br />
+            <div
+              className={`${styles.wrappingLeftSections} ${styles.spacingContacts}`}
+            >
               <p>13122128930</p>
-              <br />
               <p>jaegiff@gmail.com</p>
-              <br />
               <p>7242 Jackson Hill Rd. Newark NY 14513</p>
             </div>
-            <div className={styles.wrappingLeftSections}>
+            <div className={`${styles.wrappingLeftSections}`}>
               <h4>B.S. Chemistry</h4>
               <p>Purdue University</p>
               <p>3.27 GPA</p>
@@ -61,34 +60,34 @@ export class Template extends Component {
 export default Template;
 
 const TemplateWrapperStyles = {
-  height: '80vh',
-  width: '30vw',
+  height: '630px',
+  width: '450px',
   border: 'solid grey 2px',
   backgroundImage: `url(${background})`,
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover',
   display: 'flex',
   flexDirection: 'column',
-  gap: '5vh',
+  gap: '37.5px',
 };
 const nameWrapperStyles = {
   display: 'flex',
   justifyContent: 'flex-end',
   alignItems: 'center',
-  gap: '.5vw',
+  gap: '10px',
 };
 const summaryDisplayStyles = {
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'flex-end',
   alignItems: 'flex-start',
-  marginTop: '1.5vh',
-  gap: '.5vh',
-  marginLeft: '12vw',
+  marginTop: '12.5px',
+  gap: '5px',
+  marginLeft: '180px',
 };
 const lowerHalfWrapperStyles = {
   display: 'flex',
   justifyContent: 'space-around',
   color: 'white',
-  marginLeft: '-1vw',
+  marginLeft: '-10px',
 };

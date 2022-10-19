@@ -1,22 +1,30 @@
 .headingText {
-  font-size: 4vh;
+  font-size: 32px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .regularText {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 1.5vh;
+  font-size: 12px;
+}
+.smallerText {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 10px;
 }
 .wrappingBodyText {
-  max-height: 8.5vh;
+  max-height: 75px;
   overflow: hidden;
-  padding-right: 1vw;
+  padding-right: 10px;
+  background-color: yellow;
 }
 .wrappingLeftSections {
-  max-width: 7.5vw;
-  min-width: 7.5vw;
-
-  max-height: 12.25vh;
-  min-height: 12.25vh;
+  width: 120px;
+  height: 100px;
   overflow: hidden;
-  background-color: blue;
+}
+.spacingContacts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 15px;
 }

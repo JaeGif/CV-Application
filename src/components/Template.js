@@ -160,8 +160,8 @@ export class Template extends Component {
 export default Template;
 
 const TemplateWrapperStyles = {
-  height: '630px',
-  width: '450px',
+  height: '800px',
+  width: '565.77px',
   border: 'solid grey 2px',
   backgroundImage: `url(${background})`,
   backgroundRepeat: 'no-repeat',

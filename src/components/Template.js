@@ -19,10 +19,10 @@ export class Template extends Component {
           </p>
         </div>
 
-        <div style={lowerHalfWrapperStyles} className={`${styles.smallerText}`}>
+        <div style={lowerHalfWrapperStyles} className={`${styles.regularText}`}>
           <div>
             <div
-              className={`${styles.wrappingLeftSections} ${styles.spacingContacts}`}
+              className={`${styles.wrappingLeftSections} ${styles.spacingContacts} ${styles.smallerText}`}
             >
               <p>13122128930</p>
               <p>jaegiff@gmail.com</p>
@@ -30,19 +30,32 @@ export class Template extends Component {
             </div>
             <div className={`${styles.wrappingLeftSections}`}>
               <h4>B.S. Chemistry</h4>
+              <h5>Biochemistry</h5>
+              <br />
               <p>Purdue University</p>
-              <p>3.27 GPA</p>
+              <span className={styles.flexLine}>
+                <p>2016</p>
+                <p>-</p>
+                <p>2020</p>
+              </span>
+              <p>GPA 3.27</p>
             </div>
-            <div className={styles.wrappingLeftSections}>
+            <div
+              className={`${styles.wrappingSkills} ${styles.spacingColumnStart}`}
+            >
               <ul>
                 <li>React</li>
                 <li>Angular</li>
                 <li>Vue</li>
                 <li>Spring</li>
                 <li>Tailwind</li>
+                <li>MS Office</li>
+                <li>Organization</li>
               </ul>
             </div>
-            <div className={styles.wrappingLeftSections}>
+            <div
+              className={`${styles.wrappingLeftSections} ${styles.spacingColumnStart}`}
+            >
               <ul>
                 <li>JavaScript</li>
                 <li>Python</li>
@@ -50,7 +63,84 @@ export class Template extends Component {
               </ul>
             </div>
           </div>
-          <div>This is the experience</div>
+          <div className={`${styles.wrappingRightSections}`}>
+            <div className={styles.wrappingExperience}>
+              <h3>ARL Maryland</h3>
+              <span className={styles.flexLine}>
+                <p>2018</p>
+                <p>-</p>
+                <p>2021</p>
+              </span>
+              <div>
+                <ul>
+                  <li>This is a description of my job duties</li>
+                  <li>This is a description of my job duties</li>{' '}
+                  <li>This is a description of my job duties</li>
+                  <li>
+                    This is a longer description of my job duties to check the
+                    wrapping
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className={styles.wrappingExperience}>
+              <h3>ARL Maryland</h3>
+              <span className={styles.flexLine}>
+                <p>2018</p>
+                <p>-</p>
+                <p>2021</p>
+              </span>
+              <div>
+                <ul>
+                  <li>This is a description of my job duties</li>
+                  <li>This is a description of my job duties</li>{' '}
+                  <li>This is a description of my job duties</li>
+                  <li>
+                    This is a longer description of my job duties to check the
+                    wrapping
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className={styles.wrappingExperience}>
+              <h3>ARL Maryland</h3>
+              <span className={styles.flexLine}>
+                <p>2018</p>
+                <p>-</p>
+                <p>2021</p>
+              </span>
+              <div>
+                <ul>
+                  <li>This is a description of my job duties</li>
+                  <li>This is a description of my job duties</li>{' '}
+                  <li>This is a description of my job duties</li>
+                  <li>
+                    This is a longer description of my job duties to check the
+                    wrapping
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className={styles.wrappingExperience}>
+              <h3>ARL Maryland</h3>
+              <span className={styles.flexLine}>
+                <p>2018</p>
+                <p>-</p>
+                <p>2021</p>
+              </span>
+              <div>
+                <ul>
+                  <li>This is a description of my job duties</li>
+                  <li>This is a description of my job duties</li>{' '}
+                  <li>This is a description of my job duties</li>
+                  <li>
+                    This is a longer description of my job duties to check the
+                    wrapping
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     );
@@ -87,7 +177,8 @@ const summaryDisplayStyles = {
 };
 const lowerHalfWrapperStyles = {
   display: 'flex',
-  justifyContent: 'space-around',
-  color: 'white',
-  marginLeft: '-10px',
+  justifyContent: 'center',
+  width: '100%',
+  height: '463px',
+  gap: '30px',
 };

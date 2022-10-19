@@ -14,12 +14,28 @@
   max-height: 75px;
   overflow: hidden;
   padding-right: 10px;
-  background-color: yellow;
+}
+.wrappingExperience {
+  height: 120px;
 }
 .wrappingLeftSections {
   width: 120px;
   height: 100px;
   overflow: hidden;
+  color: white;
+  padding-left: 50px;
+}
+.wrappingRightSections {
+  width: 225px;
+  background-color: aqua;
+  margin-top: -5px;
+}
+.wrappingSkills {
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+  color: white;
+  padding-left: 50px;
 }
 .spacingContacts {
   display: flex;
@@ -27,4 +43,17 @@
   justify-content: center;
   gap: 15px;
   margin-bottom: 15px;
+  font-size: 10px;
+}
+.spacingColumnStart {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 22.5px;
+}
+.flexLine {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 5px;
 }

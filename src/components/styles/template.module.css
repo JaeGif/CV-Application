@@ -17,7 +17,8 @@
   padding-right: 10px;
 }
 .wrappingExperience {
-  height: 150px;
+  height: 147px;
+  overflow: hidden;
 }
 .wrappingLeftSections {
   width: 120px;
@@ -45,12 +46,14 @@
   justify-content: center;
   gap: 25px;
   margin-bottom: 35px;
+  overflow: hidden;
 }
 .spacingColumnStart {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   margin-top: 60px;
+  overflow: hidden;
 }
 .flexLine {
   display: flex;

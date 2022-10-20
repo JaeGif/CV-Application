@@ -58,6 +58,7 @@ export class PersonalInfo extends Component {
           <div className={styles.inputLabelsWrapper}>
             <label htmlFor='summary'>Summary</label>
             <textarea
+              maxLength={380}
               className={styles.textAreas}
               name='summary'
               type='text'

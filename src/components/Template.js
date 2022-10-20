@@ -24,7 +24,9 @@ export class Template extends Component {
                 it, everyone knows it. I hope that the world will know it soon.
                 Ya boi makes good websites. He also wanted to add enough text
                 that the element would overflow so that he knows the exact
-                limitations
+                limitations of the space he was in bu tblah blah blah blah blah
+                bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+                anyway this is totally awkward right
               </p>
             </div>
           </div>
@@ -162,7 +164,7 @@ export default Template;
 const TemplateWrapperStyles = {
   height: '800px',
   width: '565.77px',
-  border: 'solid grey 2px',
+  border: 'solid black 2px',
   backgroundImage: `url(${background})`,
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover',
@@ -181,22 +183,22 @@ const summaryDisplayStyles = {
   flexDirection: 'column',
   justifyContent: 'flex-end',
   alignItems: 'flex-start',
-  marginTop: '12.5px',
+  marginTop: '10px',
   gap: '5px',
 };
 const lowerHalfWrapperStyles = {
   display: 'flex',
   justifyContent: 'center',
   width: '100%',
-  height: '463px',
-  gap: '30px',
+  height: '600px',
 };
 const profileImage = {
-  height: '125px',
+  height: '150px',
   border: 'solid 1px black',
   borderRadius: '50%',
   marginTop: '10px',
   marginLeft: '40px',
+  marginRight: '40px',
 };
 const fitImage = {
   display: 'flex',

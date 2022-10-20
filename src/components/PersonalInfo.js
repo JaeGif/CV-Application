@@ -15,6 +15,36 @@ export class PersonalInfo extends Component {
       summary: '',
     };
   }
+  onFirstNameChange = (e) => {
+    this.setState({
+      firstName: e.target.value,
+    });
+  };
+  onLastNameChange = (e) => {
+    this.setState({
+      lastName: e.target.value,
+    });
+  };
+  onTitleChange = (e) => {
+    this.setState({
+      jobTitle: e.target.value,
+    });
+  };
+  onAddressChange = (e) => {
+    this.setState({
+      address: e.target.value,
+    });
+  };
+  onEmailChange = (e) => {
+    this.setState({
+      email: e.target.value,
+    });
+  };
+  onSummaryChange = (e) => {
+    this.setState({
+      summary: e.target.value,
+    });
+  };
 
   render() {
     return (
@@ -22,7 +52,12 @@ export class PersonalInfo extends Component {
         <div id={styles.formStructure}>
           <div className={styles.inputLabelsWrapper}>
             <label htmlFor='firstName'>First Name</label>
-            <input className={styles.inputBoxes} name='firstName' type='text' />
+            <input
+              onChange={this.onFirstNameChange}
+              className={styles.inputBoxes}
+              name='firstName'
+              type='text'
+            />
           </div>
 
           <div className={styles.inputLabelsWrapper}>

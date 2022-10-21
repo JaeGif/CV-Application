@@ -1,43 +1,26 @@
 import React, { Component } from 'react';
-import styles from './styles/personalInfo.module.css';
 
 export class PersonalInfo extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      firstName: '',
-      lastName: '',
-      jobTitle: '',
-      address: '',
-      phoneNumber: '',
-      email: '',
-      summary: '',
+      fullName: 'John Doe',
+      jobTitle: 'Jr. Software Developer',
+      summary:
+        "I'm a passionate learner teaching myself Fullstack Web Development using the Odin Project and other free online resources to supplement my education.",
+      isEdit: false,
     };
   }
-  onFirstNameChange = (e) => {
+
+  onFullNameChange = (e) => {
     this.setState({
-      firstName: e.target.value,
-    });
-  };
-  onLastNameChange = (e) => {
-    this.setState({
-      lastName: e.target.value,
+      fullName: e.target.value,
     });
   };
   onTitleChange = (e) => {
     this.setState({
       jobTitle: e.target.value,
-    });
-  };
-  onAddressChange = (e) => {
-    this.setState({
-      address: e.target.value,
-    });
-  };
-  onEmailChange = (e) => {
-    this.setState({
-      email: e.target.value,
     });
   };
   onSummaryChange = (e) => {
@@ -46,68 +29,66 @@ export class PersonalInfo extends Component {
     });
   };
 
+  changeEdit = () => {
+    if (this.state.isEdit) {
+      this.setState({
+        isEdit: false,
+      });
+    } else {
+      this.setState({
+        isEdit: true,
+      });
+    }
+  };
+
   render() {
+    const isEdit = this.state.isEdit;
     return (
-      <form>
-        <div id={styles.formStructure}>
-          <div className={styles.inputLabelsWrapper}>
-            <label htmlFor='firstName'>First Name</label>
-            <input
-              onChange={this.onFirstNameChange}
-              className={styles.inputBoxes}
-              name='firstName'
-              type='text'
-            />
-          </div>
+      <div>
+        {isEdit ? (
+          <form>
+            <div>
+              <div>
+                <label htmlFor='fullName'>Full Name</label>
+                <input
+                  type='text'
+                  placeholder={this.state.fullName}
+                  onChange={this.onFullNameChange}
+                  name='fullName'
+                ></input>
+              </div>
+              <div>
+                <label htmlFor='jobTitle'>Title</label>
+                <input
+                  type='text'
+                  placeholder={this.state.jobTitle}
+                  onChange={this.onTitleChange}
+                  name='jobTitle'
+                ></input>
+              </div>
+              <div>
+                <label htmlFor='summary'>Summary</label>
+                <textarea
+                  type='text'
+                  placeholder={this.state.summary}
+                  onChange={this.onSummaryChange}
+                  name='summary'
+                ></textarea>
+              </div>
 
-          <div className={styles.inputLabelsWrapper}>
-            <label htmlFor='lastName'>Last Name</label>
-            <input className={styles.inputBoxes} name='lastName' type='text' />
+              <button onClick={this.changeEdit} type='submit'>
+                Submit
+              </button>
+            </div>
+          </form>
+        ) : (
+          <div onClick={this.changeEdit}>
+            <h2>{this.state.fullName}</h2>
+            <h3>{this.state.jobTitle}</h3>
+            <p>{this.state.summary}</p>
           </div>
-
-          <div className={styles.inputLabelsWrapper}>
-            <label htmlFor='title'>Job Title</label>
-            <input
-              className={styles.inputBoxes}
-              name='title'
-              type='text'
-              placeholder='Desired title'
-            />
-          </div>
-
-          <div className={styles.inputLabelsWrapper}>
-            <label htmlFor='address'>Address</label>
-            <input className={styles.inputBoxes} name='address' type='text' />
-          </div>
-
-          <div className={styles.inputLabelsWrapper}>
-            <label htmlFor='phone'>Phone Number</label>
-            <input className={styles.inputBoxes} name='phone' type='number' />
-          </div>
-
-          <div className={styles.inputLabelsWrapper}>
-            <label htmlFor='email'>Email</label>
-            <input className={styles.inputBoxes} name='email' type='email' />
-          </div>
-
-          <div className={styles.inputLabelsWrapper}>
-            <label htmlFor='summary'>Summary</label>
-            <textarea
-              maxLength={380}
-              className={styles.textAreas}
-              name='summary'
-              type='text'
-              placeholder='Summary of your skills'
-            ></textarea>
-          </div>
-          <button
-            className={`${styles.nextButtons} ${styles.invalid}`}
-            type='submit'
-          >
-            Next
-          </button>
-        </div>
-      </form>
+        )}
+      </div>
     );
   }
 }

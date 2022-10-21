@@ -29,7 +29,7 @@ export class ProfileImage extends Component {
 
   render() {
     const { img, isEdit } = this.state;
-    let imageParsed = (img) => {
+    let imageParsed = () => {
       let reader = new FileReader();
       reader.onloadend = () => {
         return reader.result;

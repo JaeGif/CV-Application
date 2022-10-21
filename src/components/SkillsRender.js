@@ -12,10 +12,10 @@ class SkillsRender extends Component {
           {this.props.skills.map((skill) => {
             return (
               <li key={skill.id}>
-                {skill.text}{' '}
+                {skill.text}
                 <p
-                  onClick={() => {
-                    this.props.delete(skill.id);
+                  onClick={(e) => {
+                    this.props.delete(skill.id, e);
                   }}
                 >
                   Trash

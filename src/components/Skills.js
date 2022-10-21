@@ -25,7 +25,9 @@ export class Skills extends Component {
     });
   };
 
-  onDeleteClick = (id) => {
+  onDeleteClick = (id, e) => {
+    e.stopPropagation();
+    e.nativeEvent.stopImmediatePropagation();
     this.setState({
       skills: this.state.skills.filter((el) => id !== el.id),
     });

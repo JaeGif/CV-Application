@@ -9,6 +9,7 @@ export class Skills extends Component {
       skill: { text: '', id: uniqid() },
       skills: [],
       isEdit: true,
+      isEmpty: true,
     };
   }
   onSkillSubmit = (e) => {
@@ -45,10 +46,10 @@ export class Skills extends Component {
     }
   };
   render() {
-    const { skills, isEdit } = this.state;
+    const { skills, isEdit, isEmpty } = this.state;
     return (
       <div>
-        {isEdit ? (
+        {isEdit || isEmpty ? (
           <form>
             <input onChange={this.onSkillChange} type='text'></input>
             <button onClick={this.onSkillSubmit} type='submit'>

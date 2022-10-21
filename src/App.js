@@ -1,8 +1,7 @@
-import Main from './components/Main';
 import './reset.css';
 
 function App() {
-  return <Main />;
+  return <div></div>;
 }
 
 export default App;

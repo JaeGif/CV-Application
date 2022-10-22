@@ -9,7 +9,7 @@ export class Skills extends Component {
       skill: { text: '', id: uniqid() },
       skills: [],
       isEdit: true,
-      isEmpty: true,
+      isEmpty: false,
     };
   }
   onSkillSubmit = (e) => {
@@ -33,7 +33,19 @@ export class Skills extends Component {
       skills: this.state.skills.filter((el) => id !== el.id),
     });
   };
-
+  isSkillsEmpty = () => {
+    if (this.state.skills.length === 0) {
+      this.setState({
+        isEmpty: true,
+      });
+      return true;
+    } else {
+      this.setState({
+        isEmpty: false,
+      });
+      return false;
+    }
+  };
   changeEdit = () => {
     if (this.state.isEdit) {
       this.setState({

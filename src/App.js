@@ -4,6 +4,7 @@ import './reset.css';
 import Education from './components/Education';
 import ProfileImage from './components/ProfileImage';
 import Skills from './components/Skills';
+import Languages from './components/Languages';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Contact></Contact>
       <Education></Education>
       <Skills></Skills>
+      <Languages></Languages>
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import trash from '../assets/delete.svg';
 class SkillsRender extends Component {
   constructor(props) {
     super(props);
@@ -13,13 +13,14 @@ class SkillsRender extends Component {
             return (
               <li key={skill.id}>
                 {skill.text}
-                <p
+                <img
                   onClick={(e) => {
                     this.props.delete(skill.id, e);
                   }}
-                >
-                  Trash
-                </p>
+                  src={trash}
+                  style={trashIconStyle}
+                  alt='trash'
+                />
               </li>
             );
           })}
@@ -30,3 +31,9 @@ class SkillsRender extends Component {
 }
 
 export default SkillsRender;
+
+const trashIconStyle = {
+  height: '20px',
+  width: 'auto',
+  marginBottom: '-5px',
+};

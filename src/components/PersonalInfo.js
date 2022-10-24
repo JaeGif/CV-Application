@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import styles from './styles/fonts.module.css';
 
 export class PersonalInfo extends Component {
   constructor(props) {
@@ -44,7 +45,7 @@ export class PersonalInfo extends Component {
   render() {
     const isEdit = this.state.isEdit;
     return (
-      <div>
+      <div style={this.props.style}>
         {isEdit ? (
           <form>
             <div>
@@ -82,10 +83,12 @@ export class PersonalInfo extends Component {
             </div>
           </form>
         ) : (
-          <div onClick={this.changeEdit}>
-            <h2>{this.state.fullName}</h2>
-            <h3>{this.state.jobTitle}</h3>
-            <p>{this.state.summary}</p>
+          <div style={spacing} onClick={this.changeEdit}>
+            <div>
+              <h2 className={styles.largeText}>{this.state.fullName}</h2>
+              <h3 className={styles.titleText}>{this.state.jobTitle}</h3>
+            </div>
+            <p className={styles.regularText}>{this.state.summary}</p>
           </div>
         )}
       </div>
@@ -94,3 +97,8 @@ export class PersonalInfo extends Component {
 }
 
 export default PersonalInfo;
+const spacing = {
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '10px',
+};

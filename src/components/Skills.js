@@ -33,19 +33,7 @@ export class Skills extends Component {
       skills: this.state.skills.filter((el) => id !== el.id),
     });
   };
-  isSkillsEmpty = () => {
-    if (this.state.skills.length === 0) {
-      this.setState({
-        isEmpty: true,
-      });
-      return true;
-    } else {
-      this.setState({
-        isEmpty: false,
-      });
-      return false;
-    }
-  };
+
   changeEdit = () => {
     if (this.state.isEdit) {
       this.setState({
@@ -58,10 +46,10 @@ export class Skills extends Component {
     }
   };
   render() {
-    const { skills, isEdit, isEmpty } = this.state;
+    const { skills, isEdit } = this.state;
     return (
-      <div>
-        {isEdit || isEmpty ? (
+      <div style={this.props.style}>
+        {isEdit ? (
           <form>
             <input onChange={this.onSkillChange} type='text'></input>
             <button onClick={this.onSkillSubmit} type='submit'>

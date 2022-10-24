@@ -46,7 +46,7 @@ export class Contact extends Component {
   render() {
     const { phone, email, city, state, isEdit } = this.state;
     return (
-      <div>
+      <div style={this.props.style}>
         {isEdit ? (
           <form>
             <div>

@@ -11,7 +11,7 @@ export class ProfileImage extends Component {
   }
   onImageChange = (e) => {
     this.setState({
-      img: e.target.value,
+      img: e.target.files[0],
     });
     console.log(this.state.img);
   };
@@ -29,16 +29,11 @@ export class ProfileImage extends Component {
 
   render() {
     const { img, isEdit } = this.state;
-    let imageParsed = () => {
-      let reader = new FileReader();
-      reader.onloadend = () => {
-        return reader.result;
-      };
-    };
+
     const imageStyles = {
       height: '100px',
       width: '100px',
-      backgroundImage: `url(${imageParsed})`, //Come back here
+      backgroundImage: `url(${img})`, //Come back here
       backgroundSize: '100px 100px',
     };
 

@@ -1,0 +1,14 @@
+.smallerText {
+  font-size: 12px;
+}
+.regularText {
+  font-size: 18px;
+  color: blue;
+}
+.titleText {
+  font-size: 24px;
+  color: red;
+}
+.largeText {
+  font-size: 36px;
+}

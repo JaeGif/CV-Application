@@ -68,7 +68,7 @@ export class Experience extends Component {
     const { company, jobTitle, start, end, city, duties, isEdit } = this.state;
 
     return (
-      <div>
+      <div style={this.props.style}>
         {isEdit ? (
           <form>
             <div>
@@ -130,12 +130,12 @@ export class Experience extends Component {
           </form>
         ) : (
           <div onClick={this.changeEdit}>
-            <span>
+            <div>
               <h3>{company}</h3>
               <h3>{jobTitle}</h3>
-            </span>
-            <span>
-              <span>
+            </div>
+            <span style={dateCitySpan}>
+              <span style={dateStyle}>
                 <p>{start}</p>
                 <p>-</p>
                 <p>{end}</p>
@@ -151,3 +151,13 @@ export class Experience extends Component {
 }
 
 export default Experience;
+
+const dateStyle = {
+  display: 'flex',
+  justifyContent: 'flex-start',
+  gap: '5px',
+};
+const dateCitySpan = {
+  display: 'flex',
+  justifyContent: 'space-between',
+};

@@ -2,12 +2,12 @@ import PersonalInfo from './components/PersonalInfo';
 import Contact from './components/Contact';
 import './reset.css';
 import Education from './components/Education';
-import ProfileImage from './components/ProfileImage';
 import Skills from './components/Skills';
 import Languages from './components/Languages';
 import Experience from './components/Experience';
 import { Component } from 'react';
 import uniqid from 'uniqid';
+import cv from './assets/cv.png';
 
 class App extends Component {
   constructor() {
@@ -39,17 +39,20 @@ class App extends Component {
       experience.push(<Experience key={uniqid()} number={i} />);
     }
     return (
-      <div>
-        <ProfileImage></ProfileImage>
-        <PersonalInfo></PersonalInfo>
-        <Contact></Contact>
-        <Education></Education>
-        <Skills></Skills>
-        <Languages></Languages>
+      <div style={appStyling}>
+        <div style={leftColumn}>
+          <Contact style={contactLayout}></Contact>
+          <Education style={educationLayout}></Education>
+          <Skills style={skillsLayout}></Skills>
+          <Languages style={languagesLayout}></Languages>
+        </div>
 
-        <div>
-          {experience}
-          <button onClick={this.addExperience}>Add Work</button>
+        <div style={rightColumn}>
+          <PersonalInfo style={personalInfoLayout}></PersonalInfo>
+          <div style={experienceLayout}>
+            {experience}
+            <button onClick={this.addExperience}>Add Work</button>
+          </div>
         </div>
       </div>
     );
@@ -57,3 +60,49 @@ class App extends Component {
 }
 
 export default App;
+
+const appStyling = {
+  height: '1000px',
+  padding: '20px',
+  display: 'flex',
+  backgroundImage: `url(${cv})`,
+  backgroundRepeat: 'no-repeat',
+  backgroundPosition: 'center',
+  backgroundSize: '800px',
+  justifyContent: 'center',
+  gap: '50px',
+};
+const leftColumn = {
+  display: 'flex',
+  flexDirection: 'column',
+  marginTop: '270px',
+  gap: '20px',
+  width: '190px',
+  color: 'white',
+};
+const rightColumn = {
+  display: 'flex',
+  flexDirection: 'column',
+  marginTop: '10px',
+  width: '378px',
+};
+const contactLayout = {
+  height: '150px',
+};
+const educationLayout = {
+  height: '185px',
+};
+const skillsLayout = {
+  height: '220px',
+};
+const languagesLayout = {
+  height: '150px',
+};
+const personalInfoLayout = {
+  height: '240px',
+};
+const experienceLayout = {
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '10px',
+};

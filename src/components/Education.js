@@ -55,7 +55,7 @@ export class Education extends Component {
     const { start, end, college, degree, minor, isEdit } = this.state;
 
     return (
-      <div>
+      <div style={this.props.style}>
         {isEdit ? (
           <form>
             <div>

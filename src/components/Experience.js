@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
-
+import ExperienceRender from './ExperienceRender';
 export class Experience extends Component {
   constructor() {
     super();
     this.state = {
       job: {
-        company: '',
-        jobTitle: '',
-        start: '',
-        end: '',
-        city: '',
-        duties: '',
+        company: 'Google',
+        jobTitle: 'Sr. Software Engineer',
+        start: '2016',
+        end: '2020',
+        city: 'Seattle',
+        duties:
+          "I did all of these things at my last job, but it's not a list because the developer doesn't like making everything a list on a resume.",
       },
       jobs: [],
       isEdit: false,
@@ -26,28 +27,38 @@ export class Experience extends Component {
           <form>
             <div>
               <label htmlFor='company'>Company</label>
-              <input name='company' type='text'></input>
+              <input
+                name='company'
+                type='text'
+                placeholder={job.company}
+              ></input>
             </div>
             <div>
               <label htmlFor='title'>Title</label>
-              <input name='title' type='text'></input>
+              <input
+                name='title'
+                type='text'
+                placeholder={job.jobTitle}
+              ></input>
             </div>
             <div>
               <label htmlFor='start'>Start Date</label>
-              <input name='start' type='date'></input>
+              <input name='start' type='date' placeholder={job.start}></input>
             </div>
             <div>
               <label htmlFor='end'>End Date</label>
-              <input name='end' type='date'></input>
+              <input name='end' type='date' placeholder={job.end}></input>
             </div>
             <div>
               <label htmlFor='duties'>Job Duties</label>
-              <textarea name='duties'></textarea>
+              <textarea name='duties' placeholder={job.duties}></textarea>
             </div>
             <button type='submit'>Submit</button>
           </form>
         ) : (
-          <div></div>
+          <div>
+            <ExperienceRender job={job}></ExperienceRender>
+          </div>
         )}
       </div>
     );

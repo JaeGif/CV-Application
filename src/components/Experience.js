@@ -90,6 +90,15 @@ export class Experience extends Component {
               ></input>
             </div>
             <div>
+              <label htmlFor='city'>City</label>
+              <input
+                onChange={this.onCityChange}
+                name='city'
+                type='text'
+                placeholder={city}
+              ></input>
+            </div>
+            <div>
               <label htmlFor='start'>Start Date</label>
               <input
                 onChange={this.onStartChange}

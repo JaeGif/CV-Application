@@ -105,4 +105,6 @@ const experienceLayout = {
   display: 'flex',
   flexDirection: 'column',
   gap: '10px',
+  minHeight: '205px',
+  backgroundColor: 'yellow',
 };

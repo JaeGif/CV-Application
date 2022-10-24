@@ -142,7 +142,7 @@ export class Experience extends Component {
               </span>
               <p>{city}</p>
             </span>
-            <p>{duties}</p>
+            <p style={dutiesStyle}>{duties}</p>
           </div>
         )}
       </div>
@@ -160,4 +160,7 @@ const dateStyle = {
 const dateCitySpan = {
   display: 'flex',
   justifyContent: 'space-between',
+};
+const dutiesStyle = {
+  marginTop: '5px',
 };

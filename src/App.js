@@ -36,7 +36,9 @@ class App extends Component {
     const experience = [];
 
     for (let i = 0; i < this.state.experienceCount; i++) {
-      experience.push(<Experience key={uniqid()} number={i} />);
+      experience.push(
+        <Experience style={experienceLayout} key={uniqid()} number={i} />
+      );
     }
     return (
       <div style={appStyling}>
@@ -49,7 +51,7 @@ class App extends Component {
 
         <div style={rightColumn}>
           <PersonalInfo style={personalInfoLayout}></PersonalInfo>
-          <div style={experienceLayout}>
+          <div style={experienceContainer}>
             {experience}
             <button onClick={this.addExperience}>Add Work</button>
           </div>
@@ -102,9 +104,11 @@ const personalInfoLayout = {
   height: '240px',
 };
 const experienceLayout = {
+  height: '190px',
+};
+const experienceContainer = {
   display: 'flex',
   flexDirection: 'column',
-  gap: '10px',
-  minHeight: '205px',
-  backgroundColor: 'yellow',
+  gap: '5px',
+  maxHeight: '750px',
 };

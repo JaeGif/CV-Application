@@ -68,7 +68,7 @@ export class Experience extends Component {
     const { company, jobTitle, start, end, city, duties, isEdit } = this.state;
 
     return (
-      <div style={this.props.style}>
+      <div>
         {isEdit ? (
           <form>
             <div>
@@ -129,7 +129,7 @@ export class Experience extends Component {
             </button>
           </form>
         ) : (
-          <div onClick={this.changeEdit}>
+          <div style={this.props.style} onClick={this.changeEdit}>
             <div>
               <h3>{company}</h3>
               <h3>{jobTitle}</h3>

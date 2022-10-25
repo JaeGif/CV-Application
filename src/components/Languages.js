@@ -7,11 +7,13 @@ other lists state */
 export class Languages extends Component {
   render() {
     return (
-      <div>
-        <Skills></Skills>
+      <div style={divSpace}>
+        <Skills style={this.props.style}></Skills>
       </div>
     );
   }
 }
 
 export default Languages;
+
+const divSpace = {};

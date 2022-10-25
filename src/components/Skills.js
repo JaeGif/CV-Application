@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import uniqid from 'uniqid';
 import SkillsRender from './SkillsRender';
+import form from './styles/forms.module.css';
 
 export class Skills extends Component {
   constructor() {
@@ -50,14 +51,14 @@ export class Skills extends Component {
     return (
       <div style={this.props.style}>
         {isEdit ? (
-          <form>
+          <form className={form.formStyle}>
             <input onChange={this.onSkillChange} type='text'></input>
             <button onClick={this.onSkillSubmit} type='submit'>
               Add
             </button>
           </form>
         ) : (
-          <div onClick={this.changeEdit}>
+          <div style={this.props.style} onClick={this.changeEdit}>
             <SkillsRender
               skills={skills}
               delete={this.onDeleteClick}

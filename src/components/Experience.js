@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import form from './styles/forms.module.css';
 
 export class Experience extends Component {
   constructor() {
@@ -70,8 +71,8 @@ export class Experience extends Component {
     return (
       <div>
         {isEdit ? (
-          <form>
-            <div>
+          <form className={form.formStyle}>
+            <div className={form.labelFields}>
               <label htmlFor='company'>Company</label>
               <input
                 onChange={this.onCompanyChange}
@@ -80,7 +81,7 @@ export class Experience extends Component {
                 placeholder={company}
               ></input>
             </div>
-            <div>
+            <div className={form.labelFields}>
               <label htmlFor='title'>Title</label>
               <input
                 onChange={this.onJobTitleChange}
@@ -89,7 +90,7 @@ export class Experience extends Component {
                 placeholder={jobTitle}
               ></input>
             </div>
-            <div>
+            <div className={form.labelFields}>
               <label htmlFor='city'>City</label>
               <input
                 onChange={this.onCityChange}
@@ -98,7 +99,7 @@ export class Experience extends Component {
                 placeholder={city}
               ></input>
             </div>
-            <div>
+            <div className={form.labelFields}>
               <label htmlFor='start'>Start Date</label>
               <input
                 onChange={this.onStartChange}
@@ -107,7 +108,7 @@ export class Experience extends Component {
                 placeholder={start}
               ></input>
             </div>
-            <div>
+            <div className={form.labelFields}>
               <label htmlFor='end'>End Date</label>
               <input
                 onChange={this.onEndChange}
@@ -116,9 +117,10 @@ export class Experience extends Component {
                 placeholder={end}
               ></input>
             </div>
-            <div>
+            <div className={form.labelFields}>
               <label htmlFor='duties'>Job Duties</label>
               <textarea
+                className={form.dutiesArea}
                 onChange={this.onDutiesChange}
                 name='duties'
                 placeholder={duties}

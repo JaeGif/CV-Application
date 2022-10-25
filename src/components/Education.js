@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import styles from './styles/fonts.module.css';
+import form from './styles/forms.module.css';
 
 export class Education extends Component {
   constructor() {
@@ -55,11 +57,11 @@ export class Education extends Component {
     const { start, end, college, degree, minor, isEdit } = this.state;
 
     return (
-      <div style={this.props.style}>
+      <div>
         {isEdit ? (
-          <form>
+          <form style={formVisibilityAid} className={form.formStyle}>
             <div>
-              <div>
+              <div className={form.labelFields}>
                 <label htmlFor='college'>School</label>
                 <input
                   onChange={this.onCollegeChange}
@@ -68,7 +70,7 @@ export class Education extends Component {
                   placeholder={college}
                 ></input>
               </div>
-              <div>
+              <div className={form.labelFields}>
                 <label htmlFor='degree'>Degree</label>
                 <input
                   onChange={this.onDegreeChange}
@@ -77,7 +79,7 @@ export class Education extends Component {
                   placeholder={degree}
                 ></input>
               </div>
-              <div>
+              <div className={form.labelFields}>
                 <label htmlFor='minor'>Minor</label>
                 <input
                   onChange={this.onMinorChange}
@@ -86,7 +88,7 @@ export class Education extends Component {
                   placeholder={minor}
                 ></input>
               </div>
-              <div>
+              <div className={form.labelFields}>
                 <label htmlFor='start'>Start Date</label>
                 <input
                   onChange={this.onStartChange}
@@ -94,7 +96,7 @@ export class Education extends Component {
                   type='date'
                 ></input>
               </div>
-              <div>
+              <div className={form.labelFields}>
                 <label htmlFor='end'>Graduation Year</label>
                 <input
                   onChange={this.onEndChange}
@@ -108,15 +110,20 @@ export class Education extends Component {
             </div>
           </form>
         ) : (
-          <div onClick={this.changeEdit}>
-            <h3>{college}</h3>
-            <h4>{degree}</h4>
-            <h5>{minor}</h5>
-
-            <span>
-              <h5>{start}</h5>
+          <div style={this.props.style} onClick={this.changeEdit}>
+            <h3 className={styles.mediumTitleText}>{college}</h3>
+            <div>
+              <h4 className={styles.regularText}>
+                <em>{degree}</em>
+              </h4>
+              <h5 className={styles.regularText}>
+                <em>{minor}</em>
+              </h5>
+            </div>
+            <span style={dateStyle}>
+              <h4>{start}</h4>
               <p>-</p>
-              <h5>{end}</h5>
+              <h4>{end}</h4>
             </span>
           </div>
         )}
@@ -126,3 +133,16 @@ export class Education extends Component {
 }
 
 export default Education;
+
+const dateStyle = {
+  display: 'flex',
+  justifyContent: 'flex-start',
+  gap: '5px',
+};
+const formVisibilityAid = {
+  backgroundColor: 'white',
+  color: 'black',
+  padding: '10px',
+  border: '2px solid navy',
+  borderRadius: '5px',
+};

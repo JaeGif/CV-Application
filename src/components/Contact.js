@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import form from './styles/forms.module.css';
 
 export class Contact extends Component {
   constructor() {
@@ -46,10 +47,10 @@ export class Contact extends Component {
   render() {
     const { phone, email, city, state, isEdit } = this.state;
     return (
-      <div style={this.props.style}>
+      <div>
         {isEdit ? (
-          <form>
-            <div>
+          <form style={formVisibilityAid} className={form.formStyle}>
+            <div className={form.labelFields}>
               <label htmlFor='phone'>Phone Number</label>
               <input
                 onChange={this.onPhoneChange}
@@ -58,7 +59,7 @@ export class Contact extends Component {
                 placeholder={phone}
               ></input>
             </div>
-            <div>
+            <div className={form.labelFields}>
               <label htmlFor='email'>Email</label>
               <input
                 onChange={this.onEmailChange}
@@ -67,7 +68,7 @@ export class Contact extends Component {
                 placeholder={email}
               ></input>
             </div>
-            <div>
+            <div className={form.labelFields}>
               <label htmlFor='city'>City</label>
               <input
                 onChange={this.onCityChange}
@@ -76,7 +77,7 @@ export class Contact extends Component {
                 placeholder={city}
               ></input>
             </div>
-            <div>
+            <div className={form.labelFields}>
               <label htmlFor='state'>State</label>
               <input
                 onChange={this.onStateChange}
@@ -90,11 +91,13 @@ export class Contact extends Component {
             </button>
           </form>
         ) : (
-          <div onClick={this.changeEdit}>
-            <p>{phone}</p>
-            <p>{email}</p>
-            <p>{city}</p>
-            <p>{state}</p>
+          <div style={this.props.style} onClick={this.changeEdit}>
+            <p style={phoneShift}>{phone}</p>
+            <p style={emailShift}>{email}</p>
+            <div style={addressShift}>
+              <p>{city},</p>
+              <p>{state}</p>
+            </div>
           </div>
         )}
       </div>
@@ -103,3 +106,21 @@ export class Contact extends Component {
 }
 
 export default Contact;
+
+const phoneShift = {
+  marginTop: '-20px',
+};
+const emailShift = {
+  marginTop: '5px',
+};
+const addressShift = {
+  marginBottom: '-10px',
+};
+
+const formVisibilityAid = {
+  backgroundColor: 'white',
+  color: 'black',
+  padding: '10px',
+  border: '2px solid navy',
+  borderRadius: '5px',
+};

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styles from './styles/fonts.module.css';
+import form from './styles/forms.module.css';
 
 export class PersonalInfo extends Component {
   constructor(props) {
@@ -47,9 +48,9 @@ export class PersonalInfo extends Component {
     return (
       <div style={this.props.style}>
         {isEdit ? (
-          <form>
+          <form className={form.formStyle}>
             <div>
-              <div>
+              <div className={form.labelFields}>
                 <label htmlFor='fullName'>Full Name</label>
                 <input
                   type='text'
@@ -58,7 +59,7 @@ export class PersonalInfo extends Component {
                   name='fullName'
                 ></input>
               </div>
-              <div>
+              <div className={form.labelFields}>
                 <label htmlFor='jobTitle'>Title</label>
                 <input
                   type='text'
@@ -67,13 +68,14 @@ export class PersonalInfo extends Component {
                   name='jobTitle'
                 ></input>
               </div>
-              <div>
+              <div className={form.labelFields}>
                 <label htmlFor='summary'>Summary</label>
                 <textarea
                   type='text'
                   placeholder={this.state.summary}
                   onChange={this.onSummaryChange}
                   name='summary'
+                  className={form.textArea}
                 ></textarea>
               </div>
 

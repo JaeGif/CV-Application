@@ -11,7 +11,7 @@ class SkillsRender extends Component {
         <ul>
           {this.props.skills.map((skill) => {
             return (
-              <li key={skill.id}>
+              <li style={trashSpace} key={skill.id}>
                 {skill.text}
                 <img
                   onClick={(e) => {
@@ -36,4 +36,9 @@ const trashIconStyle = {
   height: '20px',
   width: 'auto',
   marginBottom: '-5px',
+};
+
+const trashSpace = {
+  display: 'flex',
+  justifyContent: 'space-between',
 };

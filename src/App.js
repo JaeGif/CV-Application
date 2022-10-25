@@ -53,7 +53,7 @@ class App extends Component {
           <PersonalInfo style={personalInfoLayout}></PersonalInfo>
           <div style={experienceContainer}>
             {experience}
-            <button onClick={this.addExperience}>Add Work</button>
+            <button onClick={this.addExperience}>New Job</button>
           </div>
         </div>
       </div>
@@ -64,6 +64,7 @@ class App extends Component {
 export default App;
 
 const appStyling = {
+  overflow: 'scroll',
   height: '1000px',
   padding: '20px',
   display: 'flex',
@@ -75,6 +76,7 @@ const appStyling = {
   gap: '50px',
 };
 const leftColumn = {
+  overflow: 'hidden',
   display: 'flex',
   flexDirection: 'column',
   marginTop: '270px',
@@ -83,22 +85,31 @@ const leftColumn = {
   color: 'white',
 };
 const rightColumn = {
+  overflow: 'hidden',
   display: 'flex',
   flexDirection: 'column',
   marginTop: '10px',
-  width: '378px',
+  width: '380px',
 };
 const contactLayout = {
   height: '150px',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'space-evenly',
 };
 const educationLayout = {
+  display: 'flex',
+  flexDirection: 'column',
+  marginTop: '5px',
   height: '185px',
+  gap: '15px',
 };
 const skillsLayout = {
-  height: '220px',
+  height: '200px',
+  marginBottom: '15px',
 };
 const languagesLayout = {
-  height: '150px',
+  height: '115px',
 };
 const personalInfoLayout = {
   height: '240px',

@@ -3,11 +3,12 @@
 }
 .regularText {
   font-size: 18px;
-  color: blue;
+}
+.mediumTitleText {
+  font-size: 20px;
 }
 .titleText {
   font-size: 24px;
-  color: red;
 }
 .largeText {
   font-size: 36px;

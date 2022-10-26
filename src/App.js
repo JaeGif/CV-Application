@@ -8,7 +8,6 @@ import Experience from './components/Experience';
 import { Component } from 'react';
 import uniqid from 'uniqid';
 import cv from './assets/cv.png';
-import ProfileImage from './components/ProfileImage';
 
 class App extends Component {
   constructor() {

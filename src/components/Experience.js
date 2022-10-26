@@ -1,155 +1,130 @@
-import React, { Component } from 'react';
 import form from './styles/forms.module.css';
+import { useState } from 'react';
 
-export class Experience extends Component {
-  constructor() {
-    super();
-    this.state = {
-      company: 'Google',
-      jobTitle: 'Sr. Software Engineer',
-      start: '2016',
-      end: '2020',
-      city: 'Seattle',
-      duties:
-        "I did all of these things at my last job, but it's not a list because the developer doesn't like making everything a list on a resume.",
-      isEdit: false,
-    };
-  }
+export function Experience(props) {
+  const [company, setCompany] = useState('Google');
+  const [jobTitle, setJobTitle] = useState('Sr.Software Engineer');
+  const [start, setStart] = useState('2016');
+  const [end, setEnd] = useState('2020');
+  const [city, setCity] = useState('Seattle');
+  const [duties, setDuties] = useState(
+    "I did all of these things at my last job, but it's not a list because the developer doesn't like making everything a list on a resume."
+  );
+  const [isEdit, setIsEdit] = useState(false);
 
-  onCompanyChange = (e) => {
-    this.setState({
-      company: e.target.value,
-    });
+  const onCompanyChange = (e) => {
+    setCompany(e.target.value);
   };
 
-  onStartChange = (e) => {
-    this.setState({
-      start: e.target.value.slice(0, 4),
-    });
+  const onStartChange = (e) => {
+    setStart(e.target.value.slice(0, 4));
   };
 
-  onEndChange = (e) => {
-    this.setState({
-      end: e.target.value.slice(0, 4),
-    });
+  const onEndChange = (e) => {
+    setEnd(e.target.value.slice(0, 4));
   };
 
-  onCityChange = (e) => {
-    this.setState({
-      city: e.target.value,
-    });
+  const onCityChange = (e) => {
+    setCity(e.target.value);
   };
 
-  onDutiesChange = (e) => {
-    this.setState({
-      duties: e.target.value,
-    });
+  const onDutiesChange = (e) => {
+    setDuties(e.target.value);
   };
 
-  onJobTitleChange = (e) => {
-    this.setState({
-      jobTitle: e.target.value,
-    });
+  const onJobTitleChange = (e) => {
+    setJobTitle(e.target.value);
   };
 
-  changeEdit = () => {
-    console.log('click');
-    if (this.state.isEdit) {
-      this.setState({
-        isEdit: false,
-      });
+  const changeEdit = () => {
+    if (isEdit) {
+      setIsEdit(false);
     } else {
-      this.setState({
-        isEdit: true,
-      });
+      setIsEdit(true);
     }
   };
 
-  render() {
-    const { company, jobTitle, start, end, city, duties, isEdit } = this.state;
-
-    return (
-      <div>
-        {isEdit ? (
-          <form className={form.formStyle}>
-            <div className={form.labelFields}>
-              <label htmlFor='company'>Company</label>
-              <input
-                onChange={this.onCompanyChange}
-                name='company'
-                type='text'
-                placeholder={company}
-              ></input>
-            </div>
-            <div className={form.labelFields}>
-              <label htmlFor='title'>Title</label>
-              <input
-                onChange={this.onJobTitleChange}
-                name='title'
-                type='text'
-                placeholder={jobTitle}
-              ></input>
-            </div>
-            <div className={form.labelFields}>
-              <label htmlFor='city'>City</label>
-              <input
-                onChange={this.onCityChange}
-                name='city'
-                type='text'
-                placeholder={city}
-              ></input>
-            </div>
-            <div className={form.labelFields}>
-              <label htmlFor='start'>Start Date</label>
-              <input
-                onChange={this.onStartChange}
-                name='start'
-                type='date'
-                placeholder={start}
-              ></input>
-            </div>
-            <div className={form.labelFields}>
-              <label htmlFor='end'>End Date</label>
-              <input
-                onChange={this.onEndChange}
-                name='end'
-                type='date'
-                placeholder={end}
-              ></input>
-            </div>
-            <div className={form.labelFields}>
-              <label htmlFor='duties'>Job Duties</label>
-              <textarea
-                className={form.dutiesArea}
-                onChange={this.onDutiesChange}
-                name='duties'
-                placeholder={duties}
-              ></textarea>
-            </div>
-            <button onClick={this.changeEdit} type='button'>
-              Add
-            </button>
-          </form>
-        ) : (
-          <div style={this.props.style} onClick={this.changeEdit}>
-            <div>
-              <h3>{company}</h3>
-              <h3>{jobTitle}</h3>
-            </div>
-            <span style={dateCitySpan}>
-              <span style={dateStyle}>
-                <p>{start}</p>
-                <p>-</p>
-                <p>{end}</p>
-              </span>
-              <p>{city}</p>
-            </span>
-            <p style={dutiesStyle}>{duties}</p>
+  return (
+    <div>
+      {isEdit ? (
+        <form className={form.formStyle}>
+          <div className={form.labelFields}>
+            <label htmlFor='company'>Company</label>
+            <input
+              onChange={onCompanyChange}
+              name='company'
+              type='text'
+              placeholder={company}
+            ></input>
           </div>
-        )}
-      </div>
-    );
-  }
+          <div className={form.labelFields}>
+            <label htmlFor='title'>Title</label>
+            <input
+              onChange={onJobTitleChange}
+              name='title'
+              type='text'
+              placeholder={jobTitle}
+            ></input>
+          </div>
+          <div className={form.labelFields}>
+            <label htmlFor='city'>City</label>
+            <input
+              onChange={onCityChange}
+              name='city'
+              type='text'
+              placeholder={city}
+            ></input>
+          </div>
+          <div className={form.labelFields}>
+            <label htmlFor='start'>Start Date</label>
+            <input
+              onChange={onStartChange}
+              name='start'
+              type='date'
+              placeholder={start}
+            ></input>
+          </div>
+          <div className={form.labelFields}>
+            <label htmlFor='end'>End Date</label>
+            <input
+              onChange={onEndChange}
+              name='end'
+              type='date'
+              placeholder={end}
+            ></input>
+          </div>
+          <div className={form.labelFields}>
+            <label htmlFor='duties'>Job Duties</label>
+            <textarea
+              className={form.dutiesArea}
+              onChange={onDutiesChange}
+              name='duties'
+              placeholder={duties}
+            ></textarea>
+          </div>
+          <button onClick={changeEdit} type='button'>
+            Add
+          </button>
+        </form>
+      ) : (
+        <div style={props.style} onClick={changeEdit}>
+          <div>
+            <h3>{company}</h3>
+            <h3>{jobTitle}</h3>
+          </div>
+          <span style={dateCitySpan}>
+            <span style={dateStyle}>
+              <p>{start}</p>
+              <p>-</p>
+              <p>{end}</p>
+            </span>
+            <p>{city}</p>
+          </span>
+          <p style={dutiesStyle}>{duties}</p>
+        </div>
+      )}
+    </div>
+  );
 }
 
 export default Experience;

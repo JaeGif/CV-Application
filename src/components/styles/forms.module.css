@@ -16,3 +16,7 @@
   max-height: 70px;
   max-width: 100%;
 }
+.overflow {
+  overflow: scroll;
+  height: 259px;
+}

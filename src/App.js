@@ -85,7 +85,7 @@ const leftColumn = {
   color: 'white',
 };
 const rightColumn = {
-  overflow: 'hidden',
+  overflow: 'scroll',
   display: 'flex',
   flexDirection: 'column',
   marginTop: '10px',

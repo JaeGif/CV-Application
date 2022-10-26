@@ -6,20 +6,14 @@ export function ProfileImage() {
   const [isEdit, setIsEdit] = useState(false);
 
   const onImageChange = (e) => {
-    setImg({
-      img: e.target.files[0],
-    });
+    setImg(e.target.files[0]);
     console.log(this.state.img);
   };
   const changeEdit = () => {
     if (isEdit) {
-      setIsEdit({
-        isEdit: false,
-      });
+      setIsEdit(false);
     } else {
-      setIsEdit({
-        isEdit: true,
-      });
+      setIsEdit(true);
     }
   };
 

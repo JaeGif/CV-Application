@@ -4,8 +4,8 @@ import SkillsRender from './SkillsRender';
 import form from './styles/forms.module.css';
 
 export class Skills extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       skill: { text: '', id: uniqid() },
       skills: [],
